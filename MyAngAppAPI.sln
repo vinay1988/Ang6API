@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAngAppAPI", "MyAngAppAPI\MyAngAppAPI.csproj", "{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAngAppAPI.Tests", "MyAngAppAPI.Tests\MyAngAppAPI.Tests.csproj", "{CCCAA774-0F2C-413E-BF7B-F6B861A7AC67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCAA774-0F2C-413E-BF7B-F6B861A7AC67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCAA774-0F2C-413E-BF7B-F6B861A7AC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCAA774-0F2C-413E-BF7B-F6B861A7AC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCAA774-0F2C-413E-BF7B-F6B861A7AC67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
