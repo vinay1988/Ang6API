@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MyAngAppAPI.Models;
+using MyAngAppAPI.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,10 +12,21 @@ namespace MyAngAppAPI.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private ISalesOrderRepository _salesorderRepository;
+       public ValuesController()
         {
-            return new string[] { "value1", "value2" };
+            _salesorderRepository = new SalesOrderRepository(new Models.SalesOrderContext());
+        }
+        //public ValuesController(ISalesOrderRepository salesOrderRepository)
+        //{
+        //    _salesorderRepository = salesOrderRepository;
+        //}
+        // GET api/values
+        public IEnumerable<SalesOrder> Get()
+        {
+            var model = _salesorderRepository.GetAllSalesOrder();
+            return model.AsEnumerable();
+                //string[] { "value1", "value2" };
         }
 
         // GET api/values/5
