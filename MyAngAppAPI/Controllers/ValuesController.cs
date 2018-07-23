@@ -13,7 +13,8 @@ namespace MyAngAppAPI.Controllers
     public class ValuesController : ApiController
     {
         private ISalesOrderRepository _salesorderRepository;
-       public ValuesController()
+        
+        public ValuesController()
         {
             _salesorderRepository = new SalesOrderRepository(new Models.SalesOrderContext());
         }
@@ -22,6 +23,8 @@ namespace MyAngAppAPI.Controllers
         //    _salesorderRepository = salesOrderRepository;
         //}
         // GET api/values
+
+            [Authorize]
         public IEnumerable<SalesOrder> Get()
         {
             var model = _salesorderRepository.GetAllSalesOrder();
@@ -30,19 +33,50 @@ namespace MyAngAppAPI.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public SalesOrder Get(int id)
         {
-            return "value";
+            var model = _salesorderRepository.GetSalesOrderById(id);
+             CurrencyContext db = new CurrencyContext();
+            model.CurrencyDesc = db.Currencies.Find(model.CurrencyNo).CurrencyDescription;
+            return model;
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public SalesOrder Post(SalesOrder addso)
         {
+            addso.DateOrdered = DateTime.Now;
+            addso.DateAuthorised = DateTime.Now;
+            addso.DLUP = DateTime.Now;
+            addso.CreateDate = DateTime.Now;
+            addso.ClientNo = 101;
+
+            addso.CompanyNo = 2000;
+            addso.ContactNo = 8541;
+            //addso.CurrencyNo = 1;
+            addso.Salesman = 2;
+            addso.TermsNo = 9;
+            addso.SalesOrderId =  _salesorderRepository.AddSalesOrder(addso);
+            return addso;
+        }
+        // PUT api/values/5
+        public SalesOrder Put(int id, SalesOrder addso)
+        {
+            addso.DateOrdered = DateTime.Now;
+            addso.DateAuthorised = DateTime.Now;
+            addso.DLUP = DateTime.Now;
+            addso.CreateDate = DateTime.Now;
+            addso.ClientNo = 101;
+            addso.CompanyNo = 2000;
+            addso.ContactNo = 8541;
+            //addso.CurrencyNo = 1;
+            addso.Salesman = 2;
+            addso.TermsNo = 9;
+            _salesorderRepository.UpdateSalesOrder(addso);
+            return addso;
         }
 
         // DELETE api/values/5

@@ -24,6 +24,7 @@ namespace MyAngAppAPI.Models
         public int CompanyNo { get; set; }
         public int ContactNo { get; set; }
         public DateTime DateOrdered { get; set; }
+
         public int CurrencyNo { get; set; }
         public int Salesman { get; set; }
         public int TermsNo { get; set; }
@@ -35,7 +36,7 @@ namespace MyAngAppAPI.Models
         public int DivisionNo
         { get; set; }
         public int TaxNo { get; set; }
-         public System.Double? ShippingCost { get; set; }
+        public System.Double? ShippingCost { get; set; }
         public string Notes
         { get; set; }
         public string Instructions
@@ -54,5 +55,8 @@ namespace MyAngAppAPI.Models
         public int? IncotermNo { get; set; }
         public int? CreatedBy { get; set; }
         public DateTime? CreateDate { get; set; }
+
+        [NotMapped]
+        public string CurrencyDesc { get; set; }
     }
 }

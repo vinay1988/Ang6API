@@ -23,6 +23,7 @@ namespace MyAngAppAPI.Repository
         public SalesOrder GetSalesOrderById(int salesoderId)
         {
             return _context.SalesOrders.Find(salesoderId);
+           
         }
 
         public int AddSalesOrder(SalesOrder salesorderEntity)
