@@ -18,6 +18,11 @@ namespace MyAngAppAPI
             config.EnableCors(cors);
 
             // Web API routes
+            var json = config.Formatters.JsonFormatter;
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
+            //Need to have  Microsoft.AspNet.WebApi.Cors package installed.
+            config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
@@ -26,8 +31,8 @@ namespace MyAngAppAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
-            config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
+            //var appXmlType = config.Formatters.XmlFormatter.SupportedMediaTypes.FirstOrDefault(t => t.MediaType == "application/xml");
+           // config.Formatters.XmlFormatter.SupportedMediaTypes.Remove(appXmlType);
 
             var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().First();
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();

@@ -8,8 +8,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 
+[assembly: OwinStartup(typeof(MyAngAppAPI.Startup))]
 namespace MyAngAppAPI
 {
+
     public class Startup
     {
         public void Configuration(IAppBuilder app)

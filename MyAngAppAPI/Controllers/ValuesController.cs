@@ -33,11 +33,15 @@ namespace MyAngAppAPI.Controllers
         }
 
         // GET api/values/5
+        [Authorize]
         public SalesOrder Get(int id)
         {
             var model = _salesorderRepository.GetSalesOrderById(id);
              CurrencyContext db = new CurrencyContext();
-            model.CurrencyDesc = db.Currencies.Find(model.CurrencyNo).CurrencyDescription;
+
+            Currency cu = db.Currencies.Find(model.CurrencyNo);
+            if (cu != null)
+                model.CurrencyDesc = db.Currencies.Find(model.CurrencyNo).CurrencyDescription;
             return model;
         }
 
@@ -45,7 +49,7 @@ namespace MyAngAppAPI.Controllers
         //public void Post([FromBody]string value)
         //{
         //}
-
+        [Authorize]
         public SalesOrder Post(SalesOrder addso)
         {
             addso.DateOrdered = DateTime.Now;
@@ -63,6 +67,7 @@ namespace MyAngAppAPI.Controllers
             return addso;
         }
         // PUT api/values/5
+        [Authorize]
         public SalesOrder Put(int id, SalesOrder addso)
         {
             addso.DateOrdered = DateTime.Now;
