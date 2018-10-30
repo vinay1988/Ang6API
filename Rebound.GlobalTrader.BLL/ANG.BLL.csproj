@@ -409,9 +409,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rebound.GlobalTrader.DAL\Rebound.GlobalTrader.DAL.csproj">
+    <ProjectReference Include="..\Rebound.GlobalTrader.DAL\ANG.DAL.csproj">
       <Project>{CCCDF6A6-0699-44A6-966B-511E0526CB5E}</Project>
-      <Name>Rebound.GlobalTrader.DAL</Name>
+      <Name>ANG.DAL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

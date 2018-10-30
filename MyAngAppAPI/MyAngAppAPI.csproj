@@ -314,9 +314,9 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rebound.GlobalTrader.BLL\Rebound.GlobalTrader.BLL.csproj">
+    <ProjectReference Include="..\Rebound.GlobalTrader.BLL\ANG.BLL.csproj">
       <Project>{34803df6-5674-47ff-b0f2-513c56f9ea05}</Project>
-      <Name>Rebound.GlobalTrader.BLL</Name>
+      <Name>ANG.BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

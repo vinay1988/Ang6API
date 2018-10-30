@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAngAppAPI", "MyAngAppAPI\MyAngAppAPI.csproj", "{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebound.GlobalTrader.BLL", "Rebound.GlobalTrader.BLL\Rebound.GlobalTrader.BLL.csproj", "{34803DF6-5674-47FF-B0F2-513C56F9EA05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANG.BLL", "Rebound.GlobalTrader.BLL\ANG.BLL.csproj", "{34803DF6-5674-47FF-B0F2-513C56F9EA05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebound.GlobalTrader.DAL", "Rebound.GlobalTrader.DAL\Rebound.GlobalTrader.DAL.csproj", "{CCCDF6A6-0699-44A6-966B-511E0526CB5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ANG.DAL", "Rebound.GlobalTrader.DAL\ANG.DAL.csproj", "{CCCDF6A6-0699-44A6-966B-511E0526CB5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
