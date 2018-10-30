@@ -1,0 +1,835 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCCDF6A6-0699-44A6-966B-511E0526CB5E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rebound.GlobalTrader.DAL</RootNamespace>
+    <AssemblyName>Pampero</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ConfigSection.cs" />
+    <Compile Include="Common\DataAccess.cs" />
+    <Compile Include="Common\Entities\BOMProvider.cs" />
+    <Compile Include="Common\Entities\BOMDetails.cs" />
+    <Compile Include="Common\Entities\ClientInvoiceDetails.cs" />
+    <Compile Include="Common\Entities\ClientInvoiceProvider.cs" />
+    <Compile Include="Common\Entities\ClientInvoiceLineProvider.cs" />
+    <Compile Include="Common\Entities\ClientInvoiceLineDetails.cs" />
+    <Compile Include="Common\Entities\MSLLevelDetails.cs" />
+    <Compile Include="Common\Entities\MSLLevelProvider.cs" />
+    <Compile Include="Common\Entities\GTUpdateDetails.cs" />
+    <Compile Include="Common\Entities\GTUpdateProvider.cs" />
+    <Compile Include="Common\Entities\GlobalTaxDetails.cs" />
+    <Compile Include="Common\Entities\GlobalTaxProvider.cs" />
+    <Compile Include="Common\Entities\GlobalTaxRateDetails.cs" />
+    <Compile Include="Common\Entities\GlobalTaxRateProvider.cs" />
+    <Compile Include="Common\Entities\PurchaseRequestLineDetailProvider.cs" />
+    <Compile Include="Common\Entities\InvoiceSettingProvider.cs" />
+    <Compile Include="Common\Entities\InvoiceSettingDetails.cs" />
+    <Compile Include="Common\Entities\CSVExportLogProvider.cs" />
+    <Compile Include="Common\Entities\POQuoteDetails.cs" />
+    <Compile Include="Common\Entities\POQuoteLineDetails.cs" />
+    <Compile Include="Common\Entities\POQuoteLineProvider.cs" />
+    <Compile Include="Common\Entities\POQuoteProvider.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderStatusDetails.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderLineDetails.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderLineProvider.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderStatusProvider.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderDetails.cs" />
+    <Compile Include="Common\Entities\InternalPurchaseOrderProvider.cs" />
+    <Compile Include="Common\Entities\EightDCodeProvider.cs" />
+    <Compile Include="Common\Entities\EightDCodeDetails.cs" />
+    <Compile Include="Common\Entities\CertificateCategoryProvider.cs" />
+    <Compile Include="Common\Entities\CertificateCategoryDetails.cs" />
+    <Compile Include="Common\Entities\CertificateDetails.cs" />
+    <Compile Include="Common\Entities\CertificateProvider.cs" />
+    <Compile Include="Common\Entities\EPRProvider.cs" />
+    <Compile Include="Common\Entities\EPRDetails.cs" />
+    <Compile Include="Common\Entities\LabelPathDetails.cs" />
+    <Compile Include="Common\Entities\LabelPathProvider.cs" />
+    <Compile Include="Common\Entities\ProductSourceDetails.cs" />
+    <Compile Include="Common\Entities\PrinterProvider.cs" />
+    <Compile Include="Common\Entities\PrinterDetails.cs" />
+    <Compile Include="Common\Entities\ProductSourceProvider.cs" />
+    <Compile Include="Common\Entities\PurchaseRequestLineDetailDetails.cs" />
+    <Compile Include="Common\Entities\SupplierInvoiceLineDetails.cs" />
+    <Compile Include="Common\Entities\SupplierInvoiceLineProvider.cs" />
+    <Compile Include="Common\Entities\SupplierInvoiceProvider.cs" />
+    <Compile Include="Common\Globals.cs" />
+    <Compile Include="Common\SiteProvider.cs" />
+    <Compile Include="Common\Entities\ActivityDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ActivityProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AddressDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AddressProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyAddressTypeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyAddressTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AllocationDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AllocationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AlternatePartDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AlternatePartProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AuditDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\AuditProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\BackOrderDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\BackOrderProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ClientDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ClientProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CommunicationLogDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CommunicationLogProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CommunicationLogTypeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CommunicationLogTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyAddressDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyAddressProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyIndustryTypeDetails.cs" />
+    <Compile Include="Common\Entities\CompanyIndustryTypeProvider.cs" />
+    <Compile Include="Common\Entities\CompanyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyTypeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CompanyTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactSupplementDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactSupplementProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactUserDefinedDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ContactUserDefinedProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CountingMethodDetails.cs" />
+    <Compile Include="Common\Entities\CountingMethodProvider.cs" />
+    <Compile Include="Common\Entities\CountryDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CountryProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CreditDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CreditLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CreditLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CreditProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CurrencyDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CurrencyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CurrencyRateDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CurrencyRateProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRequirementDetails.cs" />
+    <Compile Include="Common\Entities\CustomerRequirementProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaLineAllocationDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaLineAllocationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\CustomerRmaProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\DataListNuggetStateDetails.cs" />
+    <Compile Include="Common\Entities\DataListNuggetStateProvider.cs" />
+    <Compile Include="Common\Entities\DebitDetails.cs" />
+    <Compile Include="Common\Entities\DebitLineDetails.cs" />
+    <Compile Include="Common\Entities\DebitLineProvider.cs" />
+    <Compile Include="Common\Entities\DebitProvider.cs" />
+    <Compile Include="Common\Entities\DivisionDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\DivisionProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\DropDownDetails.cs" />
+    <Compile Include="Common\Entities\DropDownProvider.cs" />
+    <Compile Include="Common\Entities\DutyRateDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\DutyRateProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\EmailComposerDetails.cs" />
+    <Compile Include="Common\Entities\EmailComposerProvider.cs" />
+    <Compile Include="Common\Entities\ExcessDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ExcessProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\FeedbackDetails.cs" />
+    <Compile Include="Common\Entities\FeedbackProvider.cs" />
+    <Compile Include="Common\Entities\GlobalCountryListDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GlobalCountryListProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GlobalCurrencyListDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GlobalCurrencyListProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GoodsInDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GoodsInLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GoodsInLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\GoodsInProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\HelpFaqDetails.cs" />
+    <Compile Include="Common\Entities\HelpFaqProvider.cs" />
+    <Compile Include="Common\Entities\HelpGlossaryDetails.cs" />
+    <Compile Include="Common\Entities\HelpGlossaryProvider.cs" />
+    <Compile Include="Common\Entities\HelpGroupDetails.cs" />
+    <Compile Include="Common\Entities\HelpGroupProvider.cs" />
+    <Compile Include="Common\Entities\HelpHowToDetails.cs" />
+    <Compile Include="Common\Entities\HelpHowToProvider.cs" />
+    <Compile Include="Common\Entities\HelpHowToStepDetails.cs" />
+    <Compile Include="Common\Entities\HelpHowToStepProvider.cs" />
+    <Compile Include="Common\Entities\HistoryDetails.cs" />
+    <Compile Include="Common\Entities\HistoryProvider.cs" />
+    <Compile Include="Common\Entities\IncotermDetails.cs" />
+    <Compile Include="Common\Entities\IncotermProvider.cs" />
+    <Compile Include="Common\Entities\IndustryTypeDetails.cs" />
+    <Compile Include="Common\Entities\IndustryTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\InvoiceDetails.cs" />
+    <Compile Include="Common\Entities\InvoiceLineAllocationDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\InvoiceLineAllocationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\InvoiceLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\InvoiceLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\InvoiceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\LoginDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\LoginPreferenceDetails.cs" />
+    <Compile Include="Common\Entities\LoginPreferenceProvider.cs" />
+    <Compile Include="Common\Entities\LoginProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\LotDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\LotProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailGroupDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailGroupMemberDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailGroupMemberProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailGroupProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailMessageDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MailMessageFolderDetails.cs" />
+    <Compile Include="Common\Entities\MailMessageFolderProvider.cs" />
+    <Compile Include="Common\Entities\MailMessageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ManufacturerDetails.cs" />
+    <Compile Include="Common\Entities\ManufacturerLinkDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ManufacturerLinkProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ManufacturerProvider.cs" />
+    <Compile Include="Common\Entities\MaritalStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\MaritalStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\OfferDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\OfferProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\OfferStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\OfferStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PackageDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PackageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PartDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PartProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PartSearchDetails.cs" />
+    <Compile Include="Common\Entities\PartSearchProvider.cs" />
+    <Compile Include="Common\Entities\PDFDocumentDetails.cs" />
+    <Compile Include="Common\Entities\ProductDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ProductProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ProductTypeDetails.cs" />
+    <Compile Include="Common\Entities\ProductTypeProvider.cs" />
+    <Compile Include="Common\Entities\PurchaseOrderDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PurchaseOrderLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PurchaseOrderLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PurchaseOrderProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PurchaseOrderStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\PurchaseOrderStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\QuoteStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ReasonDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ReasonProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\RecentlyViewedDetails.cs" />
+    <Compile Include="Common\Entities\RecentlyViewedProvider.cs" />
+    <Compile Include="Common\Entities\ReportCategoryDetails.cs" />
+    <Compile Include="Common\Entities\ReportCategoryGroupDetails.cs" />
+    <Compile Include="Common\Entities\ReportCategoryGroupProvider.cs" />
+    <Compile Include="Common\Entities\ReportCategoryProvider.cs" />
+    <Compile Include="Common\Entities\ReportDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ReportColumnDetails.cs" />
+    <Compile Include="Common\Entities\ReportColumnFormatDetails.cs" />
+    <Compile Include="Common\Entities\ReportColumnFormatProvider.cs" />
+    <Compile Include="Common\Entities\ReportColumnProvider.cs" />
+    <Compile Include="Common\Entities\ReportNPRDetails.cs" />
+    <Compile Include="Common\Entities\ReportNPRProvider.cs" />
+    <Compile Include="Common\Entities\ReportParameterDetails.cs" />
+    <Compile Include="Common\Entities\ReportParameterProvider.cs" />
+    <Compile Include="Common\Entities\ReportParameterTypeDetails.cs" />
+    <Compile Include="Common\Entities\ReportParameterTypeProvider.cs" />
+    <Compile Include="Common\Entities\ReportProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\RohsStatusDetails.cs" />
+    <Compile Include="Common\Entities\RohsStatusProvider.cs" />
+    <Compile Include="Common\Entities\SaleCommissionDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SaleCommissionProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SalesOrderDetails.cs" />
+    <Compile Include="Common\Entities\SalesOrderLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SalesOrderLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SalesOrderProvider.cs" />
+    <Compile Include="Common\Entities\SalesOrderStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SalesOrderStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SaleTypeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SaleTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SecurityFunctionDetails.cs" />
+    <Compile Include="Common\Entities\SecurityFunctionProvider.cs" />
+    <Compile Include="Common\Entities\SecurityGroupDetails.cs" />
+    <Compile Include="Common\Entities\SecurityGroupLoginDetails.cs" />
+    <Compile Include="Common\Entities\SecurityGroupLoginProvider.cs" />
+    <Compile Include="Common\Entities\SecurityGroupProvider.cs" />
+    <Compile Include="Common\Entities\SecurityGroupSecurityFunctionPermissionDetails.cs" />
+    <Compile Include="Common\Entities\SecurityGroupSecurityFunctionPermissionProvider.cs" />
+    <Compile Include="Common\Entities\SequencerDetails.cs" />
+    <Compile Include="Common\Entities\SequencerProvider.cs" />
+    <Compile Include="Common\Entities\ServiceDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ServiceProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SessionDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SessionProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SettingDetails.cs" />
+    <Compile Include="Common\Entities\SettingItemDetails.cs" />
+    <Compile Include="Common\Entities\SettingItemProvider.cs" />
+    <Compile Include="Common\Entities\SettingProvider.cs" />
+    <Compile Include="Common\Entities\ShipViaDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ShipViaProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SitePageDetails.cs" />
+    <Compile Include="Common\Entities\SitePageProvider.cs" />
+    <Compile Include="Common\Entities\SiteSectionDetails.cs" />
+    <Compile Include="Common\Entities\SiteSectionProvider.cs" />
+    <Compile Include="Common\Entities\SourcingLinkDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SourcingLinkProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SourcingResultDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SourcingResultProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\StockDetails.cs" />
+    <Compile Include="Common\Entities\StockImageDetails.cs" />
+    <Compile Include="Common\Entities\StockImageProvider.cs" />
+    <Compile Include="Common\Entities\StockInfoDetails.cs" />
+    <Compile Include="Common\Entities\StockInfoProvider.cs" />
+    <Compile Include="Common\Entities\StockLogDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\StockLogProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\StockLogReasonDetails.cs" />
+    <Compile Include="Common\Entities\StockLogReasonProvider.cs" />
+    <Compile Include="Common\Entities\StockLogTypeDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\StockLogTypeProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\StockProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SupplierInvoiceDetails.cs" />
+    <Compile Include="Common\Entities\SupplierRmaDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SupplierRmaLineDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SupplierRmaLineProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SupplierRmaProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\SystemDocumentFooterDetails.cs" />
+    <Compile Include="Common\Entities\SystemDocumentFooterProvider.cs" />
+    <Compile Include="Common\Entities\TabSecurityFunctionDetails.cs" />
+    <Compile Include="Common\Entities\TabSecurityFunctionProvider.cs" />
+    <Compile Include="Common\Entities\TaskStatusDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TaskStatusProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TaxDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TaxProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TaxRateDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TaxRateProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TeamDetails.cs" />
+    <Compile Include="Common\Entities\TeamProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TermsDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\TermsProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\ToDoDetails.cs" />
+    <Compile Include="Common\Entities\ToDoProvider.cs" />
+    <Compile Include="Common\Entities\UsageDetails.cs" />
+    <Compile Include="Common\Entities\UsageProvider.cs" />
+    <Compile Include="Common\Entities\UserAuditDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\UserAuditProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\WarehouseDetails.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Entities\WarehouseProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLClient\SQLMSLLevelProvider.cs" />
+    <Compile Include="SQLClient\SQLGTUpdateProvider.cs" />
+    <Compile Include="SQLClient\SQLGlobalTaxProvider.cs" />
+    <Compile Include="SQLClient\SQLGlobalTaxRateProvider.cs" />
+    <Compile Include="SQLClient\SQLClientInvoiceLineProvider.cs" />
+    <Compile Include="SQLClient\SQLInvoiceSettingProvider.cs" />
+    <Compile Include="SQLClient\SQLClientInvoiceProvider.cs" />
+    <Compile Include="SQLClient\SQLCSVExportLogProvider.cs" />
+    <Compile Include="SQLClient\SQLInternalPurchaseOrderProvider.cs" />
+    <Compile Include="SQLClient\SQLInternalPurchaseOrderLineProvider.cs" />
+    <Compile Include="SQLClient\SQLPOQuoteLineProvider.cs" />
+    <Compile Include="SQLClient\SQLPOQuoteProvider.cs" />
+    <Compile Include="SQLClient\SQLBOMProvider.cs" />
+    <Compile Include="SQLClient\SQLEPRProvider.cs" />
+    <Compile Include="SQLClient\SQLLabelPathProvider.cs" />
+    <Compile Include="SQLClient\SQLEightDCodeProvider.cs" />
+    <Compile Include="SQLClient\SQLCertificateProvider.cs" />
+    <Compile Include="SQLClient\SQLCertificateCategoryProvider.cs" />
+    <Compile Include="SQLClient\SQLPrinterProvider.cs" />
+    <Compile Include="SQLClient\SQLActivityProvider.cs" />
+    <Compile Include="SQLClient\SQLAddressProvider.cs" />
+    <Compile Include="SQLClient\SQLCompanyAddressTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLAllocationProvider.cs" />
+    <Compile Include="SQLClient\SQLAlternatePartProvider.cs" />
+    <Compile Include="SQLClient\SQLAuditProvider.cs" />
+    <Compile Include="SQLClient\SQLBackOrderProvider.cs" />
+    <Compile Include="SQLClient\SQLClientProvider.cs" />
+    <Compile Include="SQLClient\SQLCommunicationLogProvider.cs" />
+    <Compile Include="SQLClient\SQLCommunicationLogTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLCompanyAddressProvider.cs" />
+    <Compile Include="SQLClient\SQLCompanyIndustryTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLCompanyProvider.cs" />
+    <Compile Include="SQLClient\SQLCompanyTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLContactProvider.cs" />
+    <Compile Include="SQLClient\SQLContactSupplementProvider.cs" />
+    <Compile Include="SQLClient\SQLContactUserDefinedProvider.cs" />
+    <Compile Include="SQLClient\SQLCountingMethodProvider.cs" />
+    <Compile Include="SQLClient\SQLCountryProvider.cs" />
+    <Compile Include="SQLClient\SQLCreditLineProvider.cs" />
+    <Compile Include="SQLClient\SQLCreditProvider.cs" />
+    <Compile Include="SQLClient\SQLCurrencyProvider.cs" />
+    <Compile Include="SQLClient\SQLCurrencyRateProvider.cs" />
+    <Compile Include="SQLClient\SQLCustomerRequirementProvider.cs" />
+    <Compile Include="SQLClient\SQLCustomerRmaLineAllocationProvider.cs" />
+    <Compile Include="SQLClient\SQLCustomerRmaLineProvider.cs" />
+    <Compile Include="SQLClient\SQLCustomerRmaProvider.cs" />
+    <Compile Include="SQLClient\SQLDataListNuggetStateProvider.cs" />
+    <Compile Include="SQLClient\SQLDebitLineProvider.cs" />
+    <Compile Include="SQLClient\SQLDebitProvider.cs" />
+    <Compile Include="SQLClient\SQLDivisionProvider.cs" />
+    <Compile Include="SQLClient\SQLDropDownProvider.cs" />
+    <Compile Include="SQLClient\SQLDutyRateProvider.cs" />
+    <Compile Include="SQLClient\SQLEmailComposerProvider.cs" />
+    <Compile Include="SQLClient\SQLExcessProvider.cs" />
+    <Compile Include="SQLClient\SQLFeedbackProvider.cs" />
+    <Compile Include="SQLClient\SQLGlobalCountryListProvider.cs" />
+    <Compile Include="SQLClient\SQLGlobalCurrencyListProvider.cs" />
+    <Compile Include="SQLClient\SQLGoodsInLineProvider.cs" />
+    <Compile Include="SQLClient\SQLGoodsInProvider.cs" />
+    <Compile Include="SQLClient\SQLHelpFaqProvider.cs" />
+    <Compile Include="SQLClient\SQLHelpGlossaryProvider.cs" />
+    <Compile Include="SQLClient\SQLHelpGroupProvider.cs" />
+    <Compile Include="SQLClient\SQLHelpHowToProvider.cs" />
+    <Compile Include="SQLClient\SQLHelpHowToStepProvider.cs" />
+    <Compile Include="SQLClient\SQLHistoryProvider.cs" />
+    <Compile Include="SQLClient\SQLIncotermProvider.cs" />
+    <Compile Include="SQLClient\SQLIndustryTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLInvoiceLineAllocationProvider.cs" />
+    <Compile Include="SQLClient\SQLInvoiceLineProvider.cs" />
+    <Compile Include="SQLClient\SQLInvoiceProvider.cs" />
+    <Compile Include="SQLClient\SQLLoginPreferenceProvider.cs" />
+    <Compile Include="SQLClient\SQLLoginProvider.cs" />
+    <Compile Include="SQLClient\SQLLotProvider.cs" />
+    <Compile Include="SQLClient\SQLMailGroupMemberProvider.cs" />
+    <Compile Include="SQLClient\SQLMailGroupProvider.cs" />
+    <Compile Include="SQLClient\SQLMailMessageFolderProvider.cs" />
+    <Compile Include="SQLClient\SQLMailMessageProvider.cs" />
+    <Compile Include="SQLClient\SQLManufacturerLinkProvider.cs" />
+    <Compile Include="SQLClient\SQLManufacturerProvider.cs" />
+    <Compile Include="SQLClient\SQLMaritalStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLOfferProvider.cs" />
+    <Compile Include="SQLClient\SQLOfferStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLPackageProvider.cs" />
+    <Compile Include="SQLClient\SQLPartProvider.cs" />
+    <Compile Include="SQLClient\SQLPartSearchProvider.cs" />
+    <Compile Include="SQLClient\SQLProductProvider.cs" />
+    <Compile Include="SQLClient\SQLProductSourceProvider.cs" />
+    <Compile Include="SQLClient\SQLProductTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLPurchaseOrderLineProvider.cs" />
+    <Compile Include="SQLClient\SQLPurchaseOrderProvider.cs" />
+    <Compile Include="SQLClient\SQLPurchaseOrderStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLPurchaseRequestLineDetailProvider.cs" />
+    <Compile Include="SQLClient\SQLQuoteLineProvider.cs" />
+    <Compile Include="SQLClient\SQLQuoteProvider.cs" />
+    <Compile Include="SQLClient\SQLQuoteStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLReasonProvider.cs" />
+    <Compile Include="SQLClient\SQLRecentlyViewedProvider.cs" />
+    <Compile Include="SQLClient\SQLReportCategoryGroupProvider.cs" />
+    <Compile Include="SQLClient\SQLReportCategoryProvider.cs" />
+    <Compile Include="SQLClient\SQLReportColumnFormatProvider.cs" />
+    <Compile Include="SQLClient\SQLReportColumnProvider.cs" />
+    <Compile Include="SQLClient\SQLReportNPRProvider.cs" />
+    <Compile Include="SQLClient\SQLReportParameterProvider.cs" />
+    <Compile Include="SQLClient\SQLReportParameterTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLReportProvider.cs" />
+    <Compile Include="SQLClient\SQLRohsStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLSaleCommissionProvider.cs" />
+    <Compile Include="SQLClient\SQLSalesOrderLineProvider.cs" />
+    <Compile Include="SQLClient\SQLSalesOrderProvider.cs" />
+    <Compile Include="SQLClient\SQLSalesOrderStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLSaleTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLSecurityFunctionProvider.cs" />
+    <Compile Include="SQLClient\SQLSecurityGroupLoginProvider.cs" />
+    <Compile Include="SQLClient\SQLSecurityGroupProvider.cs" />
+    <Compile Include="SQLClient\SQLSecurityGroupSecurityFunctionPermissionProvider.cs" />
+    <Compile Include="SQLClient\SQLSequencerProvider.cs" />
+    <Compile Include="SQLClient\SQLServiceProvider.cs" />
+    <Compile Include="SQLClient\SQLSessionProvider.cs" />
+    <Compile Include="SQLClient\SQLSettingItemProvider.cs" />
+    <Compile Include="SQLClient\SQLSettingProvider.cs" />
+    <Compile Include="SQLClient\SQLShipViaProvider.cs" />
+    <Compile Include="SQLClient\SQLSitePageProvider.cs" />
+    <Compile Include="SQLClient\SQLSiteSectionProvider.cs" />
+    <Compile Include="SQLClient\SQLSourcingLinkProvider.cs" />
+    <Compile Include="SQLClient\SQLSourcingResultProvider.cs" />
+    <Compile Include="SQLClient\SQLStockImageProvider.cs" />
+    <Compile Include="SQLClient\SQLStockLogProvider.cs" />
+    <Compile Include="SQLClient\SQLStockLogReasonProvider.cs" />
+    <Compile Include="SQLClient\SQLStockLogTypeProvider.cs" />
+    <Compile Include="SQLClient\SQLStockProvider.cs" />
+    <Compile Include="SQLClient\SQLSupplierInvoiceLineProvider.cs" />
+    <Compile Include="SQLClient\SQLSupplierInvoiceProvider.cs" />
+    <Compile Include="SQLClient\SQLSupplierRmaLineProvider.cs" />
+    <Compile Include="SQLClient\SQLSupplierRmaProvider.cs" />
+    <Compile Include="SQLClient\SQLSystemDocumentFooterProvider.cs" />
+    <Compile Include="SQLClient\SQLTabSecurityFunctionProvider.cs" />
+    <Compile Include="SQLClient\SQLTaskStatusProvider.cs" />
+    <Compile Include="SQLClient\SQLTaxProvider.cs" />
+    <Compile Include="SQLClient\SQLTaxRateProvider.cs" />
+    <Compile Include="SQLClient\SQLTeamProvider.cs" />
+    <Compile Include="SQLClient\SQLTermsProvider.cs" />
+    <Compile Include="SQLClient\SQLToDoProvider.cs" />
+    <Compile Include="SQLClient\SQLUsageProvider.cs" />
+    <Compile Include="SQLClient\SQLUserAuditProvider.cs" />
+    <Compile Include="SQLClient\SQLWarehouseProvider.cs" />
+    <Compile Include="SQLClient\SQLStockInfoProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

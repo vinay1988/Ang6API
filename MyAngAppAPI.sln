@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAngAppAPI", "MyAngAppAPI\MyAngAppAPI.csproj", "{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebound.GlobalTrader.BLL", "Rebound.GlobalTrader.BLL\Rebound.GlobalTrader.BLL.csproj", "{34803DF6-5674-47FF-B0F2-513C56F9EA05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rebound.GlobalTrader.DAL", "Rebound.GlobalTrader.DAL\Rebound.GlobalTrader.DAL.csproj", "{CCCDF6A6-0699-44A6-966B-511E0526CB5E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFFCE1B2-0827-47BD-93BE-2600CD7ED926}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34803DF6-5674-47FF-B0F2-513C56F9EA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34803DF6-5674-47FF-B0F2-513C56F9EA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34803DF6-5674-47FF-B0F2-513C56F9EA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34803DF6-5674-47FF-B0F2-513C56F9EA05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCCDF6A6-0699-44A6-966B-511E0526CB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCDF6A6-0699-44A6-966B-511E0526CB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCDF6A6-0699-44A6-966B-511E0526CB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCDF6A6-0699-44A6-966B-511E0526CB5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
